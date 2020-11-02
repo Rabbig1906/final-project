@@ -1,0 +1,29 @@
+/* begin */
+html{
+    background: url(img/background1.jpg);
+    background-size: cover;
+  }
+  
+  body {
+    width: 1600px;
+    background: rgba(255,255,255,0.5);
+    margin: auto ;
+    padding: 40px; 
+    margin-top: 50px;
+    font-family: 'Teko', sans-serif;
+  }
+  
+  #play-btn {
+    margin-left: 750px;
+    width: 150px;
+    padding: 10px 20px;
+    background: rgb(105, 158, 236);
+    border: none;
+    border-radius: 25px;
+    font-family: 'Teko', sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
