@@ -4,19 +4,18 @@
 document.getElementById('id').addEventListener('click', a);
 document.getElementById('button2').addEventListener('click', openC);
 document.getElementById('sell-btn').addEventListener('click', sellBtn);
-document.getElementById('sort-btn').addEventListener('click', sortBtn);
 
 let counter = 0;
 
 // Clicker function
 function a(){
-  if(counter<4){
-      document.getElementById('a').innerHTML = "Click counter:" + counter + '/50';
-      document.getElementById('reminder').style.display = 'none';
-      counter++;
-      document.getElementById('res').src ='img/glovecase.png';
-      document.getElementById('res').style.border = 'none';
-  }else if (counter === 4) {
+  if(counter<25){
+    document.getElementById('a').innerHTML = "Click counter:" + counter + '/25';
+    document.getElementById('reminder').style.display = 'none';
+    counter++;
+    document.getElementById('res').src ='img/glovecase.png';
+    document.getElementById('res').style.border = 'none';
+  }else if (counter === 25) {
     document.getElementById('button2').style.display = 'inline-block';
     document.getElementById('button2').disabled=false;
     document.getElementById("id").disabled=true;
@@ -33,7 +32,7 @@ function a(){
  let hedge = 0;
  let dlore = 0;
  let potato = 0;
- let globe = 0;
+ let globe =0;
  let fear = 0;
  let girl = 0;
  let awper = 0;
@@ -51,66 +50,77 @@ function openC() {
     document.getElementById('res').src = 'img/vice.jpg';
     document.getElementById('res').style.border = '2px solid red';
     document.getElementById('inven').innerHTML += '<img src = "img/viceinventory.png">';
+    document.getElementById('gotem').innerHTML = 'Congrats! You get the VICE Gloves.';
     caseNum++;
     vice++;
   } else if (result <0.02) {
     document.getElementById('res').src = 'img/boom.png';
     document.getElementById('res').style.border = '2px solid red';
     document.getElementById('inven').innerHTML += '<img src = "img/boominventory.png">';
+    document.getElementById('gotem').innerHTML = 'Congrats! You get the BOOM Gloves.';
     caseNum++;
     boom++;
   } else if (result < 0.03) {
     document.getElementById('res').src = 'img/arid.jpg';
     document.getElementById('res').style.border = '2px solid red';
     document.getElementById('inven').innerHTML += '<img src = "img/aridinventory.png">';
+    document.getElementById('gotem').innerHTML = 'Congrats! You get the ARID Gloves.';
     caseNum++
     arid++;
   } else if (result < 0.04) {
     document.getElementById('res').src = 'img/pandora.jpg';
     document.getElementById('res').style.border = '2px solid red';
     document.getElementById('inven').innerHTML += '<img src="img/pandorainventory.png">';
+    document.getElementById('gotem').innerHTML = 'Congrats! You get the PANDORA Gloves.';
     caseNum++;
     pandora++;
   } else if (result < 0.05) {
     document.getElementById('res').src = 'img/hedge.jpg';
     document.getElementById('res').style.border = '2px solid red';
     document.getElementById('inven').innerHTML += '<img src = "img/hedgeinventory.png">';
-    casenum++;
+    document.getElementById('gotem').innerHTML = 'Congrats! You get the HEDGE Gloves.';
+    caseNum++;
     hedge++;
   } else if (result < 0.1) {
     document.getElementById('res').src = 'img/awpdragonlore.jpg';
     document.getElementById('res').style.border = '2px solid red';
     document.getElementById('inven').innerHTML += '<img src = "img/lore.png">';
+    document.getElementById('gotem').innerHTML = 'Congrats! You get the AWP DRAGON LORE.';
     caseNum++;
     dlore++;
   } else if (result < 0.16) {
     document.getElementById('res').src = 'img/awper.png';
     document.getElementById('res').style.border = '2px solid blue';
     document.getElementById('inven').innerHTML += '<img src = "img/awperinven.png">';
+    document.getElementById('gotem').innerHTML = 'Congrats! You get the AWPER Sticker.';
     caseNum++;
     awper++;
   } else if (result < 0.32) {
     document.getElementById('res').src = 'img/girl.png';
     document.getElementById('res').style.border = '2px solid blue';
     document.getElementById('inven').innerHTML += '<img src = "img/girlinven.png">';
+    document.getElementById('gotem').innerHTML = 'Congrats! You get the FIGHT LIKE A GIRL Sticker.';
     caseNum++;
     girl++;
   } else if (result < 0.48) {
     document.getElementById('res').src = 'img/fearsome.png';
     document.getElementById('res').style.border = '2px solid blue';
     document.getElementById('inven').innerHTML += '<img src = "img/fearinven.png">';
+    document.getElementById('gotem').innerHTML = 'Congrats! You get the FEARSOME Sticker.';
     caseNum++;
     fear++;
   } else if (result < 0.64) {
     document.getElementById('res').src = 'img/global.png';
     document.getElementById('res').style.border = '2px solid pink';
     document.getElementById('inven').innerHTML += '<img src = "img/globalinven.png">';
+    document.getElementById('gotem').innerHTML = 'Congrats! You get the GLOBAL Sticker.';
     caseNum++;
     globe++;
   } else if (result < 1) {
     document.getElementById('res').src = 'img/potato.jpg';
     document.getElementById('res').style.border = '2px solid white';
     document.getElementById('inven').innerHTML += '<img src = "img/poinven.png">';
+    document.getElementById('gotem').innerHTML = 'Better luck next time. You got a POTATO.';
     caseNum++;
     potato++;
   }
@@ -150,49 +160,217 @@ function sellBtn() {
   let name = document.getElementById('item-btn').value.toLowerCase();
   
   // process
-  if (name === 'awp' || name === 'dragon lore' || name === 'hedge' || name === 'pandora' || name === 'vice' || name === 'arid' || name === 'boom' && vice > 0 || pandora > 0 || dlore > 0 || hedge > 0 || arid > 0 || boom > 0) {
+  if (name === 'awp' || name === 'dragon lore' && dlore > 0) {
     let itemSold = Math.random();
     if (itemSold < 0.2) {
       document.getElementById('res').src = 'img/polygon.jpg';
       document.getElementById('res').style.border = '2px solid yellow';
       document.getElementById('inven').innerHTML += '<img src = "img/polygoninven.png">';
       polygon++;
+      dlore--;
     } else if (itemSold < 0.4) {
       document.getElementById('res').src = 'img/crimson.jpg';
       document.getElementById('res').style.border = '2px solid yellow';
       document.getElementById('inven').innerHTML += '<img src = "img/crimsoninven.png">';
       crimson++;
+      dlore--;
     } else if (itemSold < 0.6) {
       document.getElementById('res').src = 'img/doppler.jpg';
       document.getElementById('res').style.border = '2px solid yellow';
       document.getElementById('inven').innerHTML += '<img src = "img/dopplerinven.png">';
       doppler++;
+      dlore--;
     } else if (itemSold < 0.8) {
       document.getElementById('res').src = 'img/asimov.jpg';
       document.getElementById('res').style.border = '2px solid red';
       document.getElementById('inven').innerHTML += '<img src = "img/asimovinven.png">';
       asimov++;
+      dlore--;
     } else if (itemSold < 1) {
-      document.getElementById('res').src = 'img/lorestick.jpg';
+      document.getElementById('res').src = 'img/lore.png';
       document.getElementById('res').style.border = '2px solid yellow';
       document.getElementById('inven').innerHTML += '<img src = "img/lorestickinven.png">';
       lore++;
+      dlore--;
+    }
+  } else if (name === 'arid' && arid > 0) {
+      let itemSold = Math.random();
+      if (itemSold < 0.2) {
+        document.getElementById('res').src = 'img/polygon.jpg';
+        document.getElementById('res').style.border = '2px solid yellow';
+        document.getElementById('inven').innerHTML += '<img src = "img/polygoninven.png">';
+        polygon++;
+        arid--;
+      } else if (itemSold < 0.4) {
+        document.getElementById('res').src = 'img/crimson.jpg';
+        document.getElementById('res').style.border = '2px solid yellow';
+        document.getElementById('inven').innerHTML += '<img src = "img/crimsoninven.png">';
+        crimson++;
+        arid--;
+      } else if (itemSold < 0.6) {
+        document.getElementById('res').src = 'img/doppler.jpg';
+        document.getElementById('res').style.border = '2px solid yellow';
+        document.getElementById('inven').innerHTML += '<img src = "img/dopplerinven.png">';
+        doppler++;
+        arid--;
+      } else if (itemSold < 0.8) {
+        document.getElementById('res').src = 'img/asimov.jpg';
+        document.getElementById('res').style.border = '2px solid red';
+        document.getElementById('inven').innerHTML += '<img src = "img/asimovinven.png">';
+        asimov++;
+        arid--;
+      } else if (itemSold < 1) {
+        document.getElementById('res').src = 'img/lore.png';
+        document.getElementById('res').style.border = '2px solid yellow';
+        document.getElementById('inven').innerHTML += '<img src = "img/lorestickinven.png">';
+        lore++;
+        arid--;
+      } 
+  } else if (name === 'boom' && boom > 0) {
+      let itemSold = Math.random();
+      if (itemSold < 0.2) {
+        document.getElementById('res').src = 'img/polygon.jpg';
+        document.getElementById('res').style.border = '2px solid yellow';
+        document.getElementById('inven').innerHTML += '<img src = "img/polygoninven.png">';
+        polygon++;
+        boom--;
+      } else if (itemSold < 0.4) {
+        document.getElementById('res').src = 'img/crimson.jpg';
+        document.getElementById('res').style.border = '2px solid yellow';
+        document.getElementById('inven').innerHTML += '<img src = "img/crimsoninven.png">';
+        crimson++;
+        boom--;
+      } else if (itemSold < 0.6) {
+        document.getElementById('res').src = 'img/doppler.jpg';
+        document.getElementById('res').style.border = '2px solid yellow';
+        document.getElementById('inven').innerHTML += '<img src = "img/dopplerinven.png">';
+        doppler++;
+        boom--;
+        } else if (itemSold < 0.8) {
+        document.getElementById('res').src = 'img/asimov.jpg';
+        document.getElementById('res').style.border = '2px solid red';
+        document.getElementById('inven').innerHTML += '<img src = "img/asimovinven.png">';
+        asimov++;
+        boom--;
+      } else if (itemSold < 1) {
+        document.getElementById('res').src = 'img/lore.png';
+        document.getElementById('res').style.border = '2px solid yellow';
+        document.getElementById('inven').innerHTML += '<img src = "img/lorestickinven.png">';
+        lore++;
+        boom--;
+      }
+  } else if (name === 'hedge' && hedge > 0) {
+      let itemSold = Math.random();
+      if (itemSold < 0.2) {
+      document.getElementById('res').src = 'img/polygon.jpg';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/polygoninven.png">';
+      polygon++;
+      hedge--;
+     } else if (itemSold < 0.4) {
+      document.getElementById('res').src = 'img/crimson.jpg';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/crimsoninven.png">';
+      crimson++;
+      hedge--;
+     } else if (itemSold < 0.6) {
+      document.getElementById('res').src = 'img/doppler.jpg';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/dopplerinven.png">';
+      doppler++;
+      hedge--;
+     } else if (itemSold < 0.8) {
+      document.getElementById('res').src = 'img/asimov.jpg';
+      document.getElementById('res').style.border = '2px solid red';
+      document.getElementById('inven').innerHTML += '<img src = "img/asimovinven.png">';
+      asimov++;
+      hedge--;
+     } else if (itemSold < 1) {
+      document.getElementById('res').src = 'img/lore.png';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/lorestickinven.png">';
+      lore++;
+      hedge--;
+     }
+  } else if (name === 'vice' && vice > 0) {
+     let itemSold = Math.random();
+    if (itemSold < 0.2) {
+      document.getElementById('res').src = 'img/polygon.jpg';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/polygoninven.png">';
+      polygon++;
+      vice--;
+    } else if (itemSold < 0.4) {
+      document.getElementById('res').src = 'img/crimson.jpg';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/crimsoninven.png">';
+      crimson++;
+      vice--;
+    } else if (itemSold < 0.6) {
+      document.getElementById('res').src = 'img/doppler.jpg';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/dopplerinven.png">';
+      doppler++;
+      vice--;
+    } else if (itemSold < 0.8) {
+      document.getElementById('res').src = 'img/asimov.jpg';
+      document.getElementById('res').style.border = '2px solid red';
+      document.getElementById('inven').innerHTML += '<img src = "img/asimovinven.png">';
+      asimov++;
+      vice--;
+    } else if (itemSold < 1) {
+      document.getElementById('res').src = 'img/lore.png';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/lorestickinven.png">';
+      lore++;
+      vice--;
+    }
+  } else if (name === 'pandora' && pandora > 0) {
+     let itemSold = Math.random();
+    if (itemSold < 0.2) {
+      document.getElementById('res').src = 'img/polygon.jpg';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/polygoninven.png">';
+      polygon++;
+      pandora--;
+    } else if (itemSold < 0.4) {
+      document.getElementById('res').src = 'img/crimson.jpg';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/crimsoninven.png">';
+      crimson++;
+      pandora--;
+    } else if (itemSold < 0.6) {
+      document.getElementById('res').src = 'img/doppler.jpg';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/dopplerinven.png">';
+      doppler++;
+      pandora--;
+    } else if (itemSold < 0.8) {
+      document.getElementById('res').src = 'img/asimov.jpg';
+      document.getElementById('res').style.border = '2px solid red';
+      document.getElementById('inven').innerHTML += '<img src = "img/asimovinven.png">';
+      asimov++;
+      pandora--;
+    } else if (itemSold < 1) {
+      document.getElementById('res').src = 'img/lore.png';
+      document.getElementById('res').style.border = '2px solid yellow';
+      document.getElementById('inven').innerHTML += '<img src = "img/lorestickinven.png">';
+      lore++;
+      pandora--;
     }
   } else if (name === 'global' && globe > 0) {
     let itemSelled = Math.random();
-    if (itemSelled < 0.8) {
+    if (itemSelled < 0.5) {
       document.getElementById('res').src = 'img/chief.jpg';
       document.getElementById('res').style.border = '2px solid purple';
-      document.getElementById('inven').innerHTML += '<img src ="img/chiefinven.png">';
+      document.getElementById('inven').innerHTML += '<img src = "img/chiefinven.png">';
       chief++;
-      document.getElementById('inven').innerHTML -= '<img src ="img/globalinven.png">';
       globe--;
     } else {
-      document.getElementById('res'). src = 'img/liquid.png';
+      document.getElementById('res').src = 'img/liquid.png';
       document.getElementById('res').style.border = '2px solid blue';
-      document.getElementById('inven').innerHTML += '<img src ="img/liquidinven.png">';
+      document.getElementById('inven').innerHTML += '<img src = "img/liquidinven.png">';
       liquid++;
-      document.getElementById('inven').innerHTML -= '<img src ="img/globalinven.png">';
       globe--;
     }
   } else if (name === 'fearsome' || name === 'fear' && fear > 0) {
@@ -200,16 +378,14 @@ function sellBtn() {
     if (itemSelled < 0.5) {
       document.getElementById('res').src = 'img/chief.jpg';
       document.getElementById('res').style.border = '2px solid purple';
-      document.getElementById('inven').innerHTML += '<img src ="img/chiefinven.png">';
+      document.getElementById('inven').innerHTML += '<img src = "img/chiefinven.png">';
       chief++;
-      document.getElementById('inven').innerHTML -= '<img src ="img/fearinven.png">';
       fear--;
     } else {
       document.getElementById('res'). src = 'img/liquid.png';
       document.getElementById('res').style.border = '2px solid blue';
-      document.getElementById('inven').innerHTML += '<img src ="img/liquidinven.png">';
+      document.getElementById('inven').innerHTML += '<img src = "img/liquidinven.png">';
       liquid++;
-      document.getElementById('inven').innerHTML -= '<img src = "img/fearinven.png">';
       fear--;
     }
   } else if (name === 'girl' || name === 'fight like a girl' && girl > 0) {
@@ -219,14 +395,12 @@ function sellBtn() {
       document.getElementById('res').style.border = '2px solid purple';
       document.getElementById('inven').innerHTML += '<img src = "img/chiefinven.png">';
       chief++;
-      document.getElementById('inven').innerHTML -= '<img src = "img/girlinven.png">';
       girl--;
     } else {
       document.getElementById('res'). src = 'img/liquid.png';
       document.getElementById('res').style.border = '2px solid blue';
       document.getElementById('inven').innerHTML += '<img src = "img/liquidinven.png">';
       liquid++;
-      document.getElementById('inven').innerHTML -= '<img src = "img/girlinven.png">';
       girl--;
     }
   } else if (name === 'awper' && awper > 0) {
@@ -236,14 +410,12 @@ function sellBtn() {
       document.getElementById('res').style.border = '2px solid purple';
       document.getElementById('inven').innerHTML += '<img src = "img/chiefinven.png">';
       chief++;
-      document.getElementById('inven').innerHTML -= '<img src = "img/awperinven.png">';
       awper--;
     } else {
       document.getElementById('res'). src = 'img/liquid.png';
       document.getElementById('res').style.border = '2px solid blue';
       document.getElementById('inven').innerHTML += '<img src = "img/liquidinven.png">';
       liquid++;
-      document.getElementById('inven').innerHTML -= '<img src = "img/awperinven.png">';
       awper--;
     }
   } else if (name === 'potato' || name === 'po' && potato > 0) {
@@ -253,24 +425,19 @@ function sellBtn() {
       document.getElementById('res').style.border = '2px solid purple';
       document.getElementById('inven').innerHTML += '<img src = "img/chiefinven.png">';
       chief++;
-      document.getElementById('inven').innerHTML -= '<img src = "img/poinven.png">';
       potato--;
     } else {
       document.getElementById('res'). src = 'img/liquid.png';
       document.getElementById('res').style.border = '2px solid blue';
       document.getElementById('inven').innerHTML += '<img src = "img/liquidinven.png">';
       liquid++;
-      document.getElementById('inven').innerHTML -= '<img src = "img/poinven.png">';
       potato--;
     }
   } else {
     document.getElementById('notify').innerHTML = 'Invalid Item!'
     document.getElementById('notice').innerHTML = 'Item Names: Vice, Arid, Pandora, Boom, Hedge, Dragon Lore, Global, Girl, Awper, Fearsome/Fear, Potato/Po.';
   }
-}
 
-// sort function
-function sortBtn() {
   document.getElementById('inven').innerHTML = ' ';
   let viceT = 0;
   while (viceT < vice) {

@@ -1,137 +1,132 @@
 
 /* begin */
 html{
-    background: url(img/background1.jpg);
-    background-size: cover;
-  }
-  
-  body {
-    width: 1600px;
-    background: rgba(255,255,255,0.5);
-    margin: auto ;
-    padding: 40px; 
-    margin-top: 50px;
-    font-family: 'Teko', sans-serif;
-  }
-  
-  /* id selectors */
-  #title {
-    text-align: center;
-    padding-top: 40px;
-    font-size: 50px;
-  }
-  
-  #inven {
-    border: 2px solid cyan;
-  }
-  
-  #button2 {
-    display: none;
-    margin-left: 640px;
-    width: 150px;
-    padding: 10px 20px;
-    background: greenyellow;
-    border: none;
-    border-radius: 25px;
-    font-family: 'Teko', sans-serif;
-  }
-  
-  #button2:hover {
-    cursor: -webkit-grabbing;
-    border: 2px solid yellow;
-  }
-  
-  #id {
-    margin-left: 670px;
-    width: 100px;
-    padding: 10px 20px;
-    background: cyan;
-    font-family: 'Teko', sans-serif;
-  }
-  
-  #id:hover {
-    cursor: crosshair;
-    border: 1px solid red;
-  }
+  background: url(img/background1.jpg);
+  background-size: cover;
+}
 
-  #sort-btn {
-    margin-right: 40px;
-    font-family: 'Teko', sans-serif;
-    border-radius: 15px;
-    padding: 10px;
-    background: yellow;
-    cursor: pointer;
-  }
-  
-  #sell-btn {
-    padding: 10px;
-    background: yellow;
-    border: none;
-    border-radius: 15px;
-    font-family: 'Teko', sans-serif;
-  }
-  
-  #sell-btn:hover {
-    cursor: pointer;
-    border: 1px solid white;
-  }
-  
-  #a {
-    text-align: center;
-  }
-  
-  #res1 {
-    margin-left: 350px;
-  }
-  
-  #reminder {
-    display: none;
-  }
-  
-  #meme {
-    margin-left: 50px;
-    margin-top: 40px;
-  }
-  
-  #notify {
-    margin-left: 50px;
-  }
-  
-  #notice {
-    margin-left: 50px;
-  }
-  
-  #casenumber {
-    margin-left: 50px;
-  }
-  
-  #float {
-    float: right
-  }
-  
-  #item-btn {
-    margin-left: 50px;
-  }
-  
-  #body {
-    background: url(img/gaben.gif);
-    width: 1400px;
-    margin: auto;
-    background-size: cover;
-    border-radius: 20px;
-  }
-  
-  img {
-    width: 700px;
-  }
-  
-  #inven img {
-    width: 80px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  
+body {
+  width: 1600px;
+  background: rgba(255,255,255,0.5);
+  margin: auto ;
+  padding: 40px; 
+  margin-top: 50px;
+  font-family: 'Teko', sans-serif;
+}
+
+/* id selectors */
+#title {
+  text-align: center;
+  padding-top: 40px;
+  font-size: 50px;
+}
+
+#inven {
+  border: 2px solid cyan;
+}
+
+#button2 {
+  display: none;
+  margin-left: 640px;
+  width: 150px;
+  padding: 10px 20px;
+  background: greenyellow;
+  border: none;
+  border-radius: 25px;
+  font-family: 'Teko', sans-serif;
+}
+
+#button2:hover {
+  cursor: -webkit-grabbing;
+  border: 2px solid yellow;
+}
+
+#id {
+  margin-left: 670px;
+  width: 100px;
+  padding: 10px 20px;
+  background: cyan;
+  font-family: 'Teko', sans-serif;
+}
+
+#id:hover {
+  cursor: crosshair;
+  border: 1px solid red;
+}
+
+#sell-btn {
+  padding: 10px;
+  background: yellow;
+  border: none;
+  border-radius: 15px;
+  font-family: 'Teko', sans-serif;
+  padding-left: 5px;
+}
+
+#sell-btn:hover {
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+#a {
+  text-align: center;
+}
+
+#gotem {
+  margin-left: 360px;
+}
+
+#res1 {
+  margin-left: 350px;
+}
+
+#reminder {
+  display: none;
+}
+
+#meme {
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+#notify {
+  margin-left: 50px;
+}
+
+#notice {
+  margin-left: 50px;
+}
+
+#casenumber {
+  margin-left: 50px;
+}
+
+#float {
+  float: right
+}
+
+#item-btn {
+  margin-left: 50px;
+}
+
+#body {
+  background: url(img/gaben.gif);
+  width: 1400px;
+  margin: auto;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+img {
+  width: 700px;
+}
+
+#inven img {
+  width: 80px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 50px;
+}
+
